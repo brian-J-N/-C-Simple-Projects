@@ -17,7 +17,7 @@ int main()
 
 	// open file for reading
 	ifstream inFile;
-	inFile.open("Enter File Path Here", ios::in); // File path separated with double dashes // 
+	inFile.open("Enter File Path Here", ios::in); 
 
 	// open file for writing
 	ofstream outFile;
