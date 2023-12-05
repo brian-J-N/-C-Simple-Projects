@@ -1,0 +1,51 @@
+
+
+// This program gets the numbers from the 1st file and writes only 
+// the even numbers to the 2nd file
+
+// include directives
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main()
+{
+	//Declare and initialize variables
+	int number = 0;
+
+	// open file for reading
+	ifstream inFile;
+	inFile.open("Enter File Path Here", ios::in); // File path separated with double dashes // 
+
+	// open file for writing
+	ofstream outFile;
+	outFile.open("Enter File Path Here", ios::out);
+
+	// check if file is open
+	if (inFile.is_open() && outFile.is_open())
+
+	{// loop through file to read each line
+		while (!inFile.eof())
+		{
+			inFile >> number;
+			//cout << endl << number;
+			if (number % 2 == 0)
+			{
+				outFile << number << endl;
+			}
+		}//endwhile
+		inFile.close();
+		outFile.close();
+
+		// exit message
+		cout << endl << "Even numbers have been copied to file" << endl <<
+			"Check updated file." << endl;
+	}//end if
+
+	else // display error message
+		cout << "Error the text file could not be opened." << endl;
+	//end if
+	return 0;
+}//end main
